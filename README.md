@@ -1,5 +1,8 @@
 # IconHUD-Android
 
+iOS version is here.  
+https://github.com/Tueno/IconHUD/
+
 This is alpha version, so it is possible to have some bugs.
 
 <p align="center">
