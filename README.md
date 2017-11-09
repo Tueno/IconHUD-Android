@@ -41,7 +41,8 @@ task iconhud {
     }
 }
 gradle.buildFinished { result ->
-    if (!result.failure) {
+    // You can add exclusion rule here.
+    if (!result.failure && !project.gradle.startParameter.taskNames.contains("test") && !project.gradle.startParameter.taskNames.contains("ktlint")) {
         iconhud.execute()
     }
 }
