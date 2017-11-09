@@ -98,7 +98,8 @@ final class IconConverter {
                 let bottomHUDHeight = 48
                 _ = bash(command: "convert",
                          currentDirPath: nil,
-                         arguments: ["-background", "#0008",
+                         arguments: ["-channel", "rgb",
+                                     "-background", "black",
                                      "-fill", "white",
                                      "-gravity", "center",
                                      "-size", String(format: "%dx%d", hudWidth, topHUDHeight),
@@ -109,7 +110,8 @@ final class IconConverter {
                                      "-composite", path])
                 _ = bash(command: "convert",
                          currentDirPath: nil,
-                         arguments: ["-background", "#0008",
+                         arguments: ["-channel", "rgb",
+                                     "-background", "black",
                                      "-fill", "white",
                                      "-gravity", "center",
                                      "-size", String(format: "%dx%d", hudWidth, bottomHUDHeight),
@@ -159,22 +161,6 @@ final class IconConverter {
                       dateComp.month!,
                       dateComp.day!,
                       dateComp.year!)
-    }
-    
-    private func convertImageName(size: String, scale: String, idiom: String) -> String {
-        let scaleForFilename: String
-        if scale == "1x" {
-            scaleForFilename = ""
-        } else {
-            scaleForFilename = String(format: "@%@", scale)
-        }
-        let idiomForFilename: String
-        if idiom == "ipad" {
-            idiomForFilename = String(format: "~%@", idiom)
-        } else {
-            idiomForFilename = ""
-        }
-        return String(format: "AppIcon%@%@%@.png", size, scaleForFilename, idiomForFilename)
     }
     
 }
