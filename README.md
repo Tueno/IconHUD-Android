@@ -1,6 +1,6 @@
 # IconHUD-Android
 
-iOS version here.  
+iOS version is here.  
 https://github.com/Tueno/IconHUD/
 
 This is alpha version, so it is possible to have some bugs.
