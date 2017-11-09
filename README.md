@@ -29,12 +29,16 @@ Add the script below to build.gradle(app).
 // iconhud
 task iconhud {
     doLast {
+        def path   = '/usr/local/bin/iconhud-android'
+        def binary = new File(path)
         android.applicationVariants.all { variant ->
             variant.outputs.each { output ->
                 exec {
-                    executable "/usr/local/bin/iconhud-android"
-                    args "--build-type-name", variant.buildType.name, "--build-flavor-name", variant.flavorName, "--output-path", output.outputFile
-                    ignoreExitValue true
+                    if (binary.exists()) {
+                        executable path
+                        args "--build-type-name", variant.buildType.name, "--build-flavor-name", variant.flavorName, "--output-path", output.outputFile
+                        ignoreExitValue true
+                    }
                 }
             }
         }
