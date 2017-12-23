@@ -3,7 +3,7 @@
 iOS version is here.  
 https://github.com/Tueno/IconHUD/
 
-This is alpha version, so it is possible to have some bugs.
+*This is alpha version, so There is a possibility of containing some bugs.*
 
 <p align="center">
 <img src="sample/iconhud_sample.png" alt="iconhud_sample"/>
